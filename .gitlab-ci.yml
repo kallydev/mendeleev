@@ -1,0 +1,18 @@
+image: 'rust:latest'
+
+default:
+  before_script:
+    - rustc --version 
+    - cargo --version
+
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - rustup component add rustfmt
+    - rustup component add clippy
+    - cargo fmt --check --verbose
+    - cargo clippy --profile test -- -D warnings
+    - cargo test

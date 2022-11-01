@@ -1,0 +1,42 @@
+[package]
+name = "mendeleev"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+authors = ["Ygor Souza <ygor.souza@protonmail.com>"]
+description = "List of chemical elements and their properties"
+categories = ["science"]
+keywords = ["periodic-table", "chemistry", "chemical", "atom", "atomic"]
+readme = "README.md"
+homepage = "https://gitlab.com/ygor.souza/mendeleev"
+repository = "https://gitlab.com/ygor.souza/mendeleev"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[features]
+default = ["std", "all_properties", "array"]
+std = []
+array = []
+
+all_properties = ["numeric_properties", "string_properties", "color_properties"]
+
+numeric_properties = ["atomic_number",  "atomic_radius", "atomic_weight", "year_discovered"]
+atomic_number = []
+atomic_radius = []
+atomic_weight = []
+year_discovered = []
+
+color_properties = ["cpk_color", "jmol_color"]
+cpk_color = ["color"]
+jmol_color = ["color"]
+color = []
+
+string_properties = ["symbol", "name"]
+name = []
+symbol = []
+
+[[example]]
+name = "print_all_elements"
+required-features = ["std", "all_properties", "array"]
