@@ -22,20 +22,26 @@ array = []
 
 all_properties = ["numeric_properties", "string_properties", "color_properties"]
 
-numeric_properties = ["atomic_number",  "atomic_radius", "atomic_weight", "year_discovered"]
+numeric_properties = ["atomic_number",  "atomic_radius", "atomic_weight", "group_number", "period", "year_discovered"]
 atomic_number = []
 atomic_radius = []
 atomic_weight = []
+group_number = ["group"]
 year_discovered = []
+group = []
+period = []
 
 color_properties = ["cpk_color", "jmol_color"]
 cpk_color = ["color"]
 jmol_color = ["color"]
 color = []
 
-string_properties = ["symbol", "name"]
+string_properties = ["group_name", "group_symbol", "symbol", "name"]
+group_name = ["group"]
+group_symbol = ["group"]
 name = []
 symbol = []
+
 
 [[example]]
 name = "print_all_elements"
