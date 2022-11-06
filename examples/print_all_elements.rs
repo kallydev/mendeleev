@@ -53,6 +53,13 @@ fn main() {
                 )
             }),
         ),
+        ("Period", Box::new(|e: &Element| e.period().to_string())),
+        (
+            "Group",
+            Box::new(|e: &Element| {
+                format!("{:<10}", e.group().map(|g| g.group_symbol()).unwrap_or(""))
+            }),
+        ),
     ];
     println!(
         "{}",
