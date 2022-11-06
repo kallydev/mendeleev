@@ -7,7 +7,7 @@ impl Element {
     /// use mendeleev::Element;
     /// assert_eq!(Element::H.symbol(), "H");
     /// ```
-    pub const fn symbol(&self) -> &str {
+    pub const fn symbol(&self) -> &'static str {
         match self {
             Element::H => "H",
             Element::He => "He",
