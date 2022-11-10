@@ -1,7 +1,8 @@
 use super::Element;
 
 impl Element {
-    /// The element's atomic number
+    /// Returns the element's atomic number, i.e.,
+    /// the number of protons in its nucleus.
     ///
     /// ```
     /// use mendeleev::Element;

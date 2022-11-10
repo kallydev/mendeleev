@@ -1,7 +1,7 @@
 use super::Group;
 
 impl Group {
-    /// The group's number in the periodic table
+    /// Returns the group's number in the periodic table.
     ///
     /// ```
     /// use mendeleev::Group;

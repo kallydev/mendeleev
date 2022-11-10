@@ -1,7 +1,7 @@
 use super::Group;
 
 impl Group {
-    /// The group's symbol in the CAS system
+    /// Returns the group's symbol in the CAS system
     ///
     /// ```
     /// use mendeleev::Group;

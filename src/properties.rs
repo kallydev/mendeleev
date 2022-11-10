@@ -6,7 +6,7 @@ use super::Group;
 macro_rules! prop {
     ($mod:ident, $feature:expr) => {
         #[cfg(feature = $feature)]
-        pub mod $mod;
+        mod $mod;
         #[cfg(feature = $feature)]
         pub use $mod::*;
     };

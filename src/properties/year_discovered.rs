@@ -6,7 +6,9 @@ use super::Element;
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 /// The year in which an element was discovered, if known
 pub enum YearDiscovered {
+    /// Element known since ancient times, year of discovery not known
     Ancient,
+    /// Common Era year in which the element was discovered
     Known(u16),
 }
 type Year = YearDiscovered;

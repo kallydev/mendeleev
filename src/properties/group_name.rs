@@ -1,7 +1,7 @@
 use super::Group;
 
 impl Group {
-    /// The group's trivial name, if any
+    /// Returns the group's trivial name, if any.
     ///
     /// ```
     /// use mendeleev::Group;

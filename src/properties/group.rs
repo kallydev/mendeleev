@@ -1,7 +1,7 @@
 use super::{Element, Group};
 
 impl Element {
-    /// The element's group in the periodic table, if any
+    /// Returns the element's group in the periodic table, if any.
     ///
     /// ```
     /// use mendeleev::{Element, Group};
