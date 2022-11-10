@@ -1,4 +1,4 @@
-use super::Element;
+use super::{Element, Isotope};
 
 #[cfg(feature = "group")]
 use super::Group;
@@ -6,7 +6,7 @@ use super::Group;
 macro_rules! prop {
     ($mod:ident, $feature:expr) => {
         #[cfg(feature = $feature)]
-        pub mod $mod;
+        mod $mod;
         #[cfg(feature = $feature)]
         pub use $mod::*;
     };
@@ -26,3 +26,4 @@ prop!(name, "name");
 prop!(period, "period");
 prop!(symbol, "symbol");
 prop!(year_discovered, "year_discovered");
+prop!(isotopes, "isotopes");

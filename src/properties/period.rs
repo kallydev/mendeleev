@@ -1,9 +1,10 @@
 use super::Element;
 
+/// The total number of periods in the periodic table
 pub const N_PERIODS: u32 = 7;
 
 impl Element {
-    /// The element's period number in the periodic table
+    /// Returns the element's period number in the periodic table.
     ///
     /// ```
     /// use mendeleev::Element;

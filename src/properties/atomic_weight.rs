@@ -5,18 +5,23 @@ use super::Element;
 #[derive(Clone, Debug, PartialEq)]
 /// The Standard Atomic Weight as defined by the CIAAW
 pub enum AtomicWeight {
-    // Value defined as an interval
+    /// Value defined as an interval
     Interval {
+        /// Interval of atomic weights
         range: RangeInclusive<f64>,
+        /// The mean value conventionally used
         conventional: f64,
     },
-    // Value defined with uncertainty
+    /// Value defined with uncertainty
     Uncertainty {
+        /// The mean weight value
         weight: f64,
+        /// The uncertainty in the weight
         uncertainty: f64,
     },
-    // Mass number of the most stable isotope
+    /// Atomic weight not known, default to the mass number of the most stable isotope
     MassNumber {
+        /// Mass number (number of protons + neutrons)
         number: u64,
     },
 }
@@ -100,8 +105,8 @@ const fn mn(number: u64) -> AtomicWeight {
 }
 
 impl Element {
-    /// The element's Standard Atomic Weight, if applicable,
-    /// or its mass number otherwise
+    /// Returns the element's Standard Atomic Weight, if applicable,
+    /// or its mass number otherwise.
     ///
     /// ```
     /// use mendeleev::{Element, AtomicWeight};

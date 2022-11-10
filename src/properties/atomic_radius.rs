@@ -1,7 +1,7 @@
 use super::Element;
 
 impl Element {
-    /// The element's empirically measured atomic radius in pm, if available
+    /// Returns the element's empirically measured atomic radius in pm, if available.
     ///
     /// ```
     /// use mendeleev::Element;

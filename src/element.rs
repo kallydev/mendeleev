@@ -1,6 +1,6 @@
-#[cfg(feature = "array")]
-pub mod array;
-#[cfg(feature = "array")]
+#[cfg(feature = "element_list")]
+mod array;
+#[cfg(feature = "element_list")]
 pub use array::ALL_ELEMENTS;
 
 /// The total number of known chemical elements
@@ -9,122 +9,240 @@ pub const N_ELEMENTS: usize = 118;
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 /// Each of the known chemical elements
 pub enum Element {
+    /// Hydrogen
     H,
+    /// Helium
     He,
+    /// Lithium
     Li,
+    #[doc(hidden)]
     Be,
+    #[doc(hidden)]
     B,
+    #[doc(hidden)]
     C,
+    #[doc(hidden)]
     N,
+    #[doc(hidden)]
     O,
+    #[doc(hidden)]
     F,
+    #[doc(hidden)]
     Ne,
+    #[doc(hidden)]
     Na,
+    #[doc(hidden)]
     Mg,
+    #[doc(hidden)]
     Al,
+    #[doc(hidden)]
     Si,
+    #[doc(hidden)]
     P,
+    #[doc(hidden)]
     S,
+    #[doc(hidden)]
     Cl,
+    #[doc(hidden)]
     Ar,
+    #[doc(hidden)]
     K,
+    #[doc(hidden)]
     Ca,
+    #[doc(hidden)]
     Sc,
+    #[doc(hidden)]
     Ti,
+    #[doc(hidden)]
     V,
+    #[doc(hidden)]
     Cr,
+    #[doc(hidden)]
     Mn,
+    #[doc(hidden)]
     Fe,
+    #[doc(hidden)]
     Co,
+    #[doc(hidden)]
     Ni,
+    #[doc(hidden)]
     Cu,
+    #[doc(hidden)]
     Zn,
+    #[doc(hidden)]
     Ga,
+    #[doc(hidden)]
     Ge,
+    #[doc(hidden)]
     As,
+    #[doc(hidden)]
     Se,
+    #[doc(hidden)]
     Br,
+    #[doc(hidden)]
     Kr,
+    #[doc(hidden)]
     Rb,
+    #[doc(hidden)]
     Sr,
+    #[doc(hidden)]
     Y,
+    #[doc(hidden)]
     Zr,
+    #[doc(hidden)]
     Nb,
+    #[doc(hidden)]
     Mo,
+    #[doc(hidden)]
     Tc,
+    #[doc(hidden)]
     Ru,
+    #[doc(hidden)]
     Rh,
+    #[doc(hidden)]
     Pd,
+    #[doc(hidden)]
     Ag,
+    #[doc(hidden)]
     Cd,
+    #[doc(hidden)]
     In,
+    #[doc(hidden)]
     Sn,
+    #[doc(hidden)]
     Sb,
+    #[doc(hidden)]
     Te,
+    #[doc(hidden)]
     I,
+    #[doc(hidden)]
     Xe,
+    #[doc(hidden)]
     Cs,
+    #[doc(hidden)]
     Ba,
+    #[doc(hidden)]
     La,
+    #[doc(hidden)]
     Ce,
+    #[doc(hidden)]
     Pr,
+    #[doc(hidden)]
     Nd,
+    #[doc(hidden)]
     Pm,
+    #[doc(hidden)]
     Sm,
+    #[doc(hidden)]
     Eu,
+    #[doc(hidden)]
     Gd,
+    #[doc(hidden)]
     Tb,
+    #[doc(hidden)]
     Dy,
+    #[doc(hidden)]
     Ho,
+    #[doc(hidden)]
     Er,
+    #[doc(hidden)]
     Tm,
+    #[doc(hidden)]
     Yb,
+    #[doc(hidden)]
     Lu,
+    #[doc(hidden)]
     Hf,
+    #[doc(hidden)]
     Ta,
+    #[doc(hidden)]
     W,
+    #[doc(hidden)]
     Re,
+    #[doc(hidden)]
     Os,
+    #[doc(hidden)]
     Ir,
+    #[doc(hidden)]
     Pt,
+    #[doc(hidden)]
     Au,
+    #[doc(hidden)]
     Hg,
+    #[doc(hidden)]
     Tl,
+    #[doc(hidden)]
     Pb,
+    #[doc(hidden)]
     Bi,
+    #[doc(hidden)]
     Po,
+    #[doc(hidden)]
     At,
+    #[doc(hidden)]
     Rn,
+    #[doc(hidden)]
     Fr,
+    #[doc(hidden)]
     Ra,
+    #[doc(hidden)]
     Ac,
+    #[doc(hidden)]
     Th,
+    #[doc(hidden)]
     Pa,
+    #[doc(hidden)]
     U,
+    #[doc(hidden)]
     Np,
+    #[doc(hidden)]
     Pu,
+    #[doc(hidden)]
     Am,
+    #[doc(hidden)]
     Cm,
+    #[doc(hidden)]
     Bk,
+    #[doc(hidden)]
     Cf,
+    #[doc(hidden)]
     Es,
+    #[doc(hidden)]
     Fm,
+    #[doc(hidden)]
     Md,
+    #[doc(hidden)]
     No,
+    #[doc(hidden)]
     Lr,
+    #[doc(hidden)]
     Rf,
+    #[doc(hidden)]
     Db,
+    #[doc(hidden)]
     Sg,
+    #[doc(hidden)]
     Bh,
+    #[doc(hidden)]
     Hs,
+    #[doc(hidden)]
     Mt,
+    #[doc(hidden)]
     Ds,
+    #[doc(hidden)]
     Rg,
+    #[doc(hidden)]
     Cn,
+    #[doc(hidden)]
     Nh,
+    #[doc(hidden)]
     Fl,
+    #[doc(hidden)]
     Mc,
+    #[doc(hidden)]
     Lv,
+    #[doc(hidden)]
     Ts,
+    #[doc(hidden)]
     Og,
 }

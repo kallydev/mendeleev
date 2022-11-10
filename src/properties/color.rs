@@ -4,8 +4,11 @@ use std::fmt::Display;
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 /// A 24-bit color value stored as R, G, and B bytes
 pub struct Color {
+    /// Red component
     pub r: u8,
+    /// Green component
     pub g: u8,
+    /// Blue component
     pub b: u8,
 }
 
