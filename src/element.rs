@@ -1,6 +1,6 @@
-#[cfg(feature = "array")]
+#[cfg(feature = "element_list")]
 pub mod array;
-#[cfg(feature = "array")]
+#[cfg(feature = "element_list")]
 pub use array::ALL_ELEMENTS;
 
 /// The total number of known chemical elements

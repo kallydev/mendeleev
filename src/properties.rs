@@ -1,4 +1,4 @@
-use super::Element;
+use super::{Element, Isotope};
 
 #[cfg(feature = "group")]
 use super::Group;
@@ -26,3 +26,4 @@ prop!(name, "name");
 prop!(period, "period");
 prop!(symbol, "symbol");
 prop!(year_discovered, "year_discovered");
+prop!(isotopes, "isotopes");

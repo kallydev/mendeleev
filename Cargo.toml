@@ -16,13 +16,22 @@ repository = "https://gitlab.com/ygor.souza/mendeleev"
 [dependencies]
 
 [features]
-default = ["std", "all_properties", "array"]
+default = ["all_features"]
+
+all_features = ["std", "all_properties", "all_lists"]
 std = []
 array = []
 
-all_properties = ["numeric_properties", "string_properties", "color_properties"]
+all_lists = ["element_list", "isotope_list", "group_list"]
+element_list = []
+group_list = []
+isotope_list = ["isotopes"]
 
-numeric_properties = ["atomic_number",  "atomic_radius", "atomic_weight", "group_number", "period", "year_discovered"]
+all_properties = ["all_element_properties", "all_isotope_properties"]
+
+all_element_properties = ["numeric_properties", "string_properties", "color_properties"]
+
+numeric_properties = ["atomic_number",  "atomic_radius", "atomic_weight", "group_number", "period", "year_discovered", "isotope_natural_abundance"]
 atomic_number = []
 atomic_radius = []
 atomic_weight = []
@@ -42,7 +51,19 @@ group_symbol = ["group"]
 name = []
 symbol = []
 
+all_isotope_properties = ["isotope_element", "isotope_mass_number", "isotope_natural_abundance", "isotope_neutron_number", "isotope_display"]
+isotope_element = ["isotopes"]
+isotope_natural_abundance = ["isotopes"]
+isotope_mass_number = ["isotopes"]
+isotope_neutron_number = ["atomic_number", "isotope_mass_number", "isotope_element"]
+isotope_display = ["isotopes", "isotope_mass_number", "name", "symbol"]
+isotopes = []
+
 
 [[example]]
 name = "print_all_elements"
-required-features = ["std", "all_properties", "array"]
+required-features = ["std", "all_element_properties", "element_list"]
+
+[[example]]
+name = "print_periodic_table"
+required-features = ["std", "symbol", "group", "period", "element_list", "group_list"]
