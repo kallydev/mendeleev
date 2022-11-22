@@ -27,3 +27,7 @@ prop!(period, "period");
 prop!(symbol, "symbol");
 prop!(year_discovered, "year_discovered");
 prop!(isotopes, "isotopes");
+prop!(melting_point, "melting_point");
+prop!(boiling_point, "boiling_point");
+prop!(fusion_heat, "fusion_heat");
+prop!(evaporation_heat, "evaporation_heat");
