@@ -1,5 +1,19 @@
 use super::Element;
 
+#[cfg(feature = "ranges")]
+/// Range from the minimum to the maximum boiling point across all elements
+///
+/// Convenience constant to avoid writing the code below when this range is needed:
+///
+/// ```
+/// use mendeleev::{Element, BOILING_POINT_RANGE};
+/// let all_values = Element::list().iter().flat_map(|e| e.boiling_point());
+/// let min = all_values.clone().min_by(|a, b| a.total_cmp(&b)).unwrap();
+/// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
+/// assert_eq!(min..=max, BOILING_POINT_RANGE);
+/// ```
+pub const BOILING_POINT_RANGE: std::ops::RangeInclusive<f64> = 4.216..=5930.0;
+
 impl Element {
     /// Returns the element's boiling point in Kelvin, if known.
     ///

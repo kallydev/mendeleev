@@ -1,6 +1,6 @@
 [package]
 name = "mendeleev"
-version = "0.4.0"
+version = "0.5.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 authors = ["Ygor Souza <ygor.souza@protonmail.com>"]
@@ -18,9 +18,9 @@ repository = "https://gitlab.com/ygor.souza/mendeleev"
 [features]
 default = ["all_features"]
 
-all_features = ["std", "all_properties", "all_lists"]
+all_features = ["std", "all_properties", "all_lists", "ranges"]
 std = []
-array = []
+ranges = []
 
 all_lists = ["element_list", "isotope_list", "group_list"]
 element_list = []

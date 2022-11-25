@@ -1,5 +1,21 @@
 use super::Isotope;
 
+#[cfg(feature = "ranges")]
+/// Range from the minimum to the maximum natural abundance across all isotopes
+///
+/// Only counts the isotopes that occur naturally in some amount, so the minimum is not 0.
+///
+/// Convenience constant to avoid writing the code below when this range is needed:
+///
+/// ```
+/// use mendeleev::{Isotope, ISOTOPE_NATURAL_ABUNDANCE_RANGE};
+/// let all_values = Isotope::list().iter().flat_map(|e| e.natural_abundance());
+/// let min = all_values.clone().min_by(|a, b| a.total_cmp(&b)).unwrap();
+/// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
+/// assert_eq!(min..=max, ISOTOPE_NATURAL_ABUNDANCE_RANGE);
+/// ```
+pub const ISOTOPE_NATURAL_ABUNDANCE_RANGE: std::ops::RangeInclusive<f64> = 0.0002..=100.0;
+
 impl Isotope {
     /// The isotopes relative natural abundance on Earth, as a percentage,
     /// or None if the isotope does not occur naturally or only in trace amounts

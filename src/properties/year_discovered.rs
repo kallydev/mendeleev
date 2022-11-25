@@ -3,6 +3,23 @@ use std::fmt::Display;
 
 use super::Element;
 
+#[cfg(feature = "ranges")]
+/// Range from the minimum to the maximum known year of discovery across all elements
+///
+/// Convenience constant to avoid writing the code below when this range is needed:
+///
+/// ```
+/// use mendeleev::{Element, YearDiscovered, YEAR_DISCOVERED_RANGE};
+/// let all_values = Element::list().iter().flat_map(|e| match e.year_discovered() {
+/// YearDiscovered::Known(year) => Some(year),
+/// _ => None
+/// });
+/// let min = all_values.clone().min().unwrap();
+/// let max = all_values.max().unwrap();
+/// assert_eq!(min..=max, YEAR_DISCOVERED_RANGE);
+/// ```
+pub const YEAR_DISCOVERED_RANGE: std::ops::RangeInclusive<u16> = 1669..=2010;
+
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 /// The year in which an element was discovered, if known
 pub enum YearDiscovered {

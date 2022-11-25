@@ -1,5 +1,19 @@
 use super::Element;
 
+#[cfg(feature = "ranges")]
+/// Range from the minimum to the maximum fusion heat across all elements
+///
+/// Convenience constant to avoid writing the code below when this range is needed:
+///
+/// ```
+/// use mendeleev::{Element, FUSION_HEAT_RANGE};
+/// let all_values = Element::list().iter().flat_map(|e| e.fusion_heat());
+/// let min = all_values.clone().min_by(|a, b| a.total_cmp(&b)).unwrap();
+/// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
+/// assert_eq!(min..=max, FUSION_HEAT_RANGE);
+/// ```
+pub const FUSION_HEAT_RANGE: std::ops::RangeInclusive<f64> = 0.117..=102.5;
+
 impl Element {
     /// Returns the element's fusion heat in kJ/mol, if known.
     ///

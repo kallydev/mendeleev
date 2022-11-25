@@ -1,5 +1,19 @@
 use super::Isotope;
 
+#[cfg(feature = "ranges")]
+/// Range from the minimum to the maximum mass number across all isotopes
+///
+/// Convenience constant to avoid writing the code below when this range is needed:
+///
+/// ```
+/// use mendeleev::{Isotope, ISOTOPE_MASS_NUMBER_RANGE};
+/// let all_values = Isotope::list().iter().map(|e| e.mass_number());
+/// let min = all_values.clone().min().unwrap();
+/// let max = all_values.max().unwrap();
+/// assert_eq!(min..=max, ISOTOPE_MASS_NUMBER_RANGE);
+/// ```
+pub const ISOTOPE_MASS_NUMBER_RANGE: std::ops::RangeInclusive<u32> = 1..=295;
+
 impl Isotope {
     /// Returns the isotope's mass number, i.e., the sum
     /// of the number of protons and neutrons in its nucleus
