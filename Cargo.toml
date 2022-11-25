@@ -73,3 +73,7 @@ required-features = ["std", "all_element_properties", "element_list"]
 [[example]]
 name = "print_periodic_table"
 required-features = ["std", "symbol", "group", "period", "element_list", "group_list"]
+
+[[example]]
+name = "print_isotope_abundance"
+required-features = ["std", "name", "isotope_natural_abundance", "isotope_display", "isotope_list", "isotope_element"]
