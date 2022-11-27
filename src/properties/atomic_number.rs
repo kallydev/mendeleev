@@ -1,5 +1,19 @@
 use super::Element;
 
+#[cfg(feature = "ranges")]
+/// Range from the minimum to the maximum atomic number across all elements
+///
+/// Convenience constant to avoid writing the code below when this range is needed:
+///
+/// ```
+/// use mendeleev::{Element, ATOMIC_NUMBER_RANGE};
+/// let all_values = Element::list().iter().map(|e| e.atomic_number());
+/// let min = all_values.clone().min().unwrap();
+/// let max = all_values.max().unwrap();
+/// assert_eq!(min..=max, ATOMIC_NUMBER_RANGE);
+/// ```
+pub const ATOMIC_NUMBER_RANGE: std::ops::RangeInclusive<u32> = 1..=118;
+
 impl Element {
     /// Returns the element's atomic number, i.e.,
     /// the number of protons in its nucleus.

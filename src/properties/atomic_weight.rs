@@ -2,6 +2,20 @@ use std::{fmt::Display, ops::RangeInclusive};
 
 use super::Element;
 
+#[cfg(feature = "ranges")]
+/// Range from the minimum to the maximum atomic weight across all elements
+///
+/// Convenience constant to avoid writing the code below when this range is needed:
+///
+/// ```
+/// use mendeleev::{Element, ATOMIC_WEIGHT_RANGE};
+/// let all_values = Element::list().iter().map(|e| f64::from(e.atomic_weight()));
+/// let min = all_values.clone().min_by(|a, b| a.total_cmp(&b)).unwrap();
+/// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
+/// assert_eq!(min..=max, ATOMIC_WEIGHT_RANGE);
+/// ```
+pub const ATOMIC_WEIGHT_RANGE: RangeInclusive<f64> = 1.008..=294.0;
+
 #[derive(Clone, Debug, PartialEq)]
 /// The Standard Atomic Weight as defined by the CIAAW
 pub enum AtomicWeight {

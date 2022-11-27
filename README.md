@@ -1,3 +1,10 @@
+[![Latest version](https://img.shields.io/crates/v/mendeleev.svg)](https://crates.io/crates/mendeleev)
+[![pipeline status](https://gitlab.com/ygor.souza/mendeleev/badges/main/pipeline.svg)](https://gitlab.com/ygor.souza/mendeleev/-/commits/main)
+[![Documentation](https://docs.rs/mendeleev/badge.svg)](https://docs.rs/mendeleev)
+[![unsafe forbidden](https://img.shields.io/badge/unsafe-forbidden-success.svg)](https://github.com/rust-secure-code/safety-dance/)
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.com/ygor.souza/mendeleev/-/blob/main/LICENSE-MIT)
+[![Apache](https://img.shields.io/badge/license-Apache-blue.svg)](https://gitlab.com/ygor.souza/mendeleev/-/blob/main/LICENSE-APACHE)
+
 # Mendeleev
 
 Mendeleev is a crate containing all known chemical elements as an enum
@@ -13,6 +20,8 @@ of them.
 - No `build.rs` file to parse JSON or CSV data, to improve IDE support.
 - Element properties as method behind feature flags, to reduce binary
   size and compilation time when not all properties are needed
+- Numeric properties are accompanied by constants providing the range
+  of values they can take
 - Documentation, tests, and examples.
 
 The data from this crate comes from the PyPI package
