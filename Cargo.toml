@@ -30,7 +30,9 @@ isotope_list = ["isotopes"]
 
 all_properties = ["all_element_properties", "all_isotope_properties"]
 
-all_element_properties = ["numeric_properties", "string_properties", "color_properties"]
+all_element_properties = ["numeric_properties", "string_properties", "color_properties", "electronic_configuration"]
+
+electronic_configuration = []
 
 numeric_properties = ["atomic_number",  "atomic_radius", "atomic_weight", "group_number", "period", "year_discovered", "isotope_natural_abundance", "state_of_matter_properties"]
 atomic_number = []
@@ -78,3 +80,7 @@ required-features = ["std", "symbol", "group", "period", "element_list", "group_
 [[example]]
 name = "print_isotope_abundance"
 required-features = ["std", "name", "isotope_natural_abundance", "isotope_display", "isotope_list", "isotope_element"]
+
+[[example]]
+name = "print_electronic_configuration"
+required-features = ["std", "symbol", "electronic_configuration"]
