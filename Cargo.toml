@@ -54,11 +54,12 @@ cpk_color = ["color"]
 jmol_color = ["color"]
 color = []
 
-string_properties = ["group_name", "group_symbol", "symbol", "name"]
+string_properties = ["group_name", "group_symbol", "symbol", "name", "discoverers"]
 group_name = ["group"]
 group_symbol = ["group"]
 name = []
 symbol = []
+discoverers = []
 
 all_isotope_properties = ["isotope_element", "isotope_mass_number", "isotope_natural_abundance", "isotope_neutron_number", "isotope_display"]
 isotope_element = ["isotopes"]
