@@ -34,3 +34,4 @@ prop!(fusion_heat, "fusion_heat");
 prop!(evaporation_heat, "evaporation_heat");
 prop!(electronic_configuration, "electronic_configuration");
 prop!(discoverers, "discoverers");
+prop!(discovery_location, "discovery_location");
