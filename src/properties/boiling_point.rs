@@ -12,7 +12,7 @@ use super::Element;
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, BOILING_POINT_RANGE);
 /// ```
-pub const BOILING_POINT_RANGE: std::ops::RangeInclusive<f64> = 4.216..=5930.0;
+pub const BOILING_POINT_RANGE: core::ops::RangeInclusive<f64> = 4.216..=5930.0;
 
 impl Element {
     /// Returns the element's boiling point in Kelvin, if known.

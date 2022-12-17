@@ -14,7 +14,7 @@ use super::Isotope;
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, ISOTOPE_NATURAL_ABUNDANCE_RANGE);
 /// ```
-pub const ISOTOPE_NATURAL_ABUNDANCE_RANGE: std::ops::RangeInclusive<f64> = 0.0002..=100.0;
+pub const ISOTOPE_NATURAL_ABUNDANCE_RANGE: core::ops::RangeInclusive<f64> = 0.0002..=100.0;
 
 impl Isotope {
     /// The isotopes relative natural abundance on Earth, as a percentage,

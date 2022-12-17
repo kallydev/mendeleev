@@ -12,7 +12,7 @@ use super::Element;
 /// let max = all_values.max().unwrap();
 /// assert_eq!(min..=max, ATOMIC_NUMBER_RANGE);
 /// ```
-pub const ATOMIC_NUMBER_RANGE: std::ops::RangeInclusive<u32> = 1..=118;
+pub const ATOMIC_NUMBER_RANGE: core::ops::RangeInclusive<u32> = 1..=118;
 
 impl Element {
     /// Returns the element's atomic number, i.e.,

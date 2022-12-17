@@ -5,8 +5,8 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 authors = ["Ygor Souza <ygor.souza@protonmail.com>"]
 description = "List of chemical elements and their properties"
-categories = ["science"]
-keywords = ["periodic-table", "chemistry", "chemical", "atom", "atomic"]
+categories = ["science", "no-std"]
+keywords = ["periodic-table", "chemistry", "isotope", "atom", "atomic"]
 readme = "README.md"
 homepage = "https://gitlab.com/ygor.souza/mendeleev"
 repository = "https://gitlab.com/ygor.souza/mendeleev"
@@ -18,7 +18,8 @@ repository = "https://gitlab.com/ygor.souza/mendeleev"
 [features]
 default = ["all_features"]
 
-all_features = ["std", "all_properties", "all_lists", "ranges"]
+all_features = ["all_no_std_features", "std"]
+all_no_std_features = ["all_properties", "all_lists", "ranges"]
 std = []
 ranges = []
 

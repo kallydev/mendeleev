@@ -1,4 +1,7 @@
-use std::{fmt::Display, ops::RangeInclusive};
+use core::ops::RangeInclusive;
+
+#[cfg(feature = "std")]
+use std::{fmt::Display, format};
 
 use super::Element;
 
@@ -41,7 +44,7 @@ pub enum AtomicWeight {
 }
 
 impl PartialOrd for AtomicWeight {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+    fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
         f64::from(self).partial_cmp(&f64::from(other))
     }
 }
@@ -74,8 +77,14 @@ impl AtomicWeight {
     }
 }
 
+#[cfg(feature = "std")]
 impl Display for AtomicWeight {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        fn get_precision(uncertainty: f64) -> (usize, u8) {
+            let precision = uncertainty.log10().floor().abs();
+            let digit = uncertainty * 10.0f64.powf(precision);
+            (precision as usize, digit as u8)
+        }
         let s = match self {
             AtomicWeight::Interval {
                 range: _,
@@ -93,12 +102,6 @@ impl Display for AtomicWeight {
         f.write_str(&s)?;
         Ok(())
     }
-}
-
-fn get_precision(uncertainty: f64) -> (usize, u8) {
-    let precision = uncertainty.log10().floor().abs();
-    let digit = uncertainty * 10.0f64.powf(precision);
-    (precision as usize, digit as u8)
 }
 
 const fn bounds(range: RangeInclusive<f64>, conventional: f64) -> AtomicWeight {

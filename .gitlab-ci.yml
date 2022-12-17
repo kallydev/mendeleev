@@ -16,3 +16,4 @@ test:
     - cargo fmt --check --verbose
     - cargo clippy --profile test -- -D warnings
     - cargo test
+    - cargo test --no-default-features --features all_no_std_features
