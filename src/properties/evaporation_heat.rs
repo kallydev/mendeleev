@@ -12,7 +12,7 @@ use super::Element;
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, EVAPORATION_HEAT_RANGE);
 /// ```
-pub const EVAPORATION_HEAT_RANGE: std::ops::RangeInclusive<f64> = 0.08..=824.0;
+pub const EVAPORATION_HEAT_RANGE: core::ops::RangeInclusive<f64> = 0.08..=824.0;
 
 impl Element {
     /// Returns the element's evaporation heat in kJ/mol, if known.

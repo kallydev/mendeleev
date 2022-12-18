@@ -1,12 +1,12 @@
 [package]
 name = "mendeleev"
-version = "0.5.0"
+version = "0.6.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 authors = ["Ygor Souza <ygor.souza@protonmail.com>"]
-description = "List of chemical elements and their properties"
-categories = ["science"]
-keywords = ["periodic-table", "chemistry", "chemical", "atom", "atomic"]
+description = "List of chemical elements, their isotopes, and their properties"
+categories = ["science", "no-std"]
+keywords = ["periodic-table", "chemistry", "isotope", "atom", "atomic"]
 readme = "README.md"
 homepage = "https://gitlab.com/ygor.souza/mendeleev"
 repository = "https://gitlab.com/ygor.souza/mendeleev"
@@ -18,7 +18,8 @@ repository = "https://gitlab.com/ygor.souza/mendeleev"
 [features]
 default = ["all_features"]
 
-all_features = ["std", "all_properties", "all_lists", "ranges"]
+all_features = ["all_no_std_features", "std"]
+all_no_std_features = ["all_properties", "all_lists", "ranges"]
 std = []
 ranges = []
 
@@ -29,7 +30,9 @@ isotope_list = ["isotopes"]
 
 all_properties = ["all_element_properties", "all_isotope_properties"]
 
-all_element_properties = ["numeric_properties", "string_properties", "color_properties"]
+all_element_properties = ["numeric_properties", "string_properties", "color_properties", "electronic_configuration"]
+
+electronic_configuration = []
 
 numeric_properties = ["atomic_number",  "atomic_radius", "atomic_weight", "group_number", "period", "year_discovered", "isotope_natural_abundance", "state_of_matter_properties"]
 atomic_number = []
@@ -51,11 +54,13 @@ cpk_color = ["color"]
 jmol_color = ["color"]
 color = []
 
-string_properties = ["group_name", "group_symbol", "symbol", "name"]
+string_properties = ["group_name", "group_symbol", "symbol", "name", "discoverers", "discovery_location"]
 group_name = ["group"]
 group_symbol = ["group"]
 name = []
 symbol = []
+discoverers = []
+discovery_location = []
 
 all_isotope_properties = ["isotope_element", "isotope_mass_number", "isotope_natural_abundance", "isotope_neutron_number", "isotope_display"]
 isotope_element = ["isotopes"]
@@ -77,3 +82,7 @@ required-features = ["std", "symbol", "group", "period", "element_list", "group_
 [[example]]
 name = "print_isotope_abundance"
 required-features = ["std", "name", "isotope_natural_abundance", "isotope_display", "isotope_list", "isotope_element"]
+
+[[example]]
+name = "print_electronic_configuration"
+required-features = ["std", "symbol", "electronic_configuration"]

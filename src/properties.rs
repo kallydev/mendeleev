@@ -1,3 +1,4 @@
+#[allow(unused_imports)]
 use super::{Element, Isotope};
 
 #[cfg(feature = "group")]
@@ -31,3 +32,6 @@ prop!(melting_point, "melting_point");
 prop!(boiling_point, "boiling_point");
 prop!(fusion_heat, "fusion_heat");
 prop!(evaporation_heat, "evaporation_heat");
+prop!(electronic_configuration, "electronic_configuration");
+prop!(discoverers, "discoverers");
+prop!(discovery_location, "discovery_location");

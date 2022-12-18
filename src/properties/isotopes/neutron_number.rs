@@ -12,7 +12,7 @@ use super::Isotope;
 /// let max = all_values.max().unwrap();
 /// assert_eq!(min..=max, ISOTOPE_NEUTRON_NUMBER_RANGE);
 /// ```
-pub const ISOTOPE_NEUTRON_NUMBER_RANGE: std::ops::RangeInclusive<u32> = 0..=177;
+pub const ISOTOPE_NEUTRON_NUMBER_RANGE: core::ops::RangeInclusive<u32> = 0..=177;
 
 impl Isotope {
     /// Returns the neutron number of the isotope,

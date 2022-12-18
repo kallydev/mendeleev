@@ -18,7 +18,7 @@ use super::Element;
 /// let max = all_values.max().unwrap();
 /// assert_eq!(min..=max, YEAR_DISCOVERED_RANGE);
 /// ```
-pub const YEAR_DISCOVERED_RANGE: std::ops::RangeInclusive<u16> = 1669..=2010;
+pub const YEAR_DISCOVERED_RANGE: core::ops::RangeInclusive<u16> = 1669..=2010;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 /// The year in which an element was discovered, if known

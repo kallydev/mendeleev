@@ -1,3 +1,6 @@
+use crate::to_superscript;
+use std::{format, string::String};
+
 use super::Isotope;
 
 impl Isotope {
@@ -38,24 +41,4 @@ impl Isotope {
             self.element().symbol()
         )
     }
-}
-
-fn to_superscript(number: u32) -> String {
-    number
-        .to_string()
-        .chars()
-        .map(|c| match c {
-            '0' => '⁰',
-            '1' => '¹',
-            '2' => '²',
-            '3' => '³',
-            '4' => '⁴',
-            '5' => '⁵',
-            '6' => '⁶',
-            '7' => '⁷',
-            '8' => '⁸',
-            '9' => '⁹',
-            c => c,
-        })
-        .collect()
 }

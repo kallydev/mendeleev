@@ -12,7 +12,7 @@ use super::Element;
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, ATOMIC_RADIUS_RANGE);
 /// ```
-pub const ATOMIC_RADIUS_RANGE: std::ops::RangeInclusive<f64> = 25.0..=260.0;
+pub const ATOMIC_RADIUS_RANGE: core::ops::RangeInclusive<f64> = 25.0..=260.0;
 
 impl Element {
     /// Returns the element's empirically measured atomic radius in pm, if available.

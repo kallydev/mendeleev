@@ -3,7 +3,7 @@ mod array;
 #[cfg(feature = "isotope_list")]
 pub use array::ALL_ISOTOPES;
 
-#[cfg(feature = "isotope_display")]
+#[cfg(all(feature = "isotope_display", feature = "std"))]
 mod display;
 
 /// The total number of known isotopes across all elements

@@ -12,7 +12,7 @@ use super::Element;
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, FUSION_HEAT_RANGE);
 /// ```
-pub const FUSION_HEAT_RANGE: std::ops::RangeInclusive<f64> = 0.117..=102.5;
+pub const FUSION_HEAT_RANGE: core::ops::RangeInclusive<f64> = 0.117..=102.5;
 
 impl Element {
     /// Returns the element's fusion heat in kJ/mol, if known.

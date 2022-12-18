@@ -12,7 +12,7 @@ use super::Isotope;
 /// let max = all_values.max().unwrap();
 /// assert_eq!(min..=max, ISOTOPE_MASS_NUMBER_RANGE);
 /// ```
-pub const ISOTOPE_MASS_NUMBER_RANGE: std::ops::RangeInclusive<u32> = 1..=295;
+pub const ISOTOPE_MASS_NUMBER_RANGE: core::ops::RangeInclusive<u32> = 1..=295;
 
 impl Isotope {
     /// Returns the isotope's mass number, i.e., the sum

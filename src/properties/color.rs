@@ -1,5 +1,5 @@
 #[cfg(feature = "std")]
-use std::fmt::Display;
+use std::{fmt::Display, format, string::String};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 /// A 24-bit color value stored as R, G, and B bytes
@@ -40,10 +40,11 @@ pub(crate) const fn color(r: u8, g: u8, b: u8) -> Option<Color> {
 
 #[cfg(test)]
 mod tests {
+    #[cfg(feature = "std")]
     use super::*;
 
     #[test]
-    #[cfg(feature = "atomic_number")]
+    #[cfg(feature = "std")]
     fn generates_html_string() {
         let cases = [
             (Color { r: 0, g: 0, b: 0 }, "#000000"),
