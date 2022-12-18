@@ -1,10 +1,10 @@
 [package]
 name = "mendeleev"
-version = "0.5.0"
+version = "0.6.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 authors = ["Ygor Souza <ygor.souza@protonmail.com>"]
-description = "List of chemical elements and their properties"
+description = "List of chemical elements, their isotopes, and their properties"
 categories = ["science", "no-std"]
 keywords = ["periodic-table", "chemistry", "isotope", "atom", "atomic"]
 readme = "README.md"
