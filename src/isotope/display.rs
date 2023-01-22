@@ -1,4 +1,4 @@
-use crate::to_superscript;
+use crate::superscript::Superscript;
 use std::{format, string::String};
 
 use super::Isotope;
@@ -37,7 +37,7 @@ impl Isotope {
     pub fn display_with_superscript(&self) -> String {
         format!(
             "{}{}",
-            to_superscript(self.mass_number()),
+            Superscript::new(self.mass_number()),
             self.element().symbol()
         )
     }
