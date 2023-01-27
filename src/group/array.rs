@@ -47,4 +47,15 @@ impl Group {
     pub const fn list() -> &'static [Self] {
         &ALL_GROUPS
     }
+
+    /// Returns an iterator that yields all the groups by value, ordered by group number
+    ///
+    /// ```
+    /// use mendeleev::Group;
+    ///
+    /// assert_eq!(Group::iter().next(), Some(Group::IA));
+    /// ```
+    pub fn iter() -> impl Iterator<Item = Self> + Clone {
+        ALL_GROUPS.into_iter()
+    }
 }

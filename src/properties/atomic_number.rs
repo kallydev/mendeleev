@@ -7,7 +7,7 @@ use super::Element;
 ///
 /// ```
 /// use mendeleev::{Element, ATOMIC_NUMBER_RANGE};
-/// let all_values = Element::list().iter().map(|e| e.atomic_number());
+/// let all_values = Element::iter().map(|e| e.atomic_number());
 /// let min = all_values.clone().min().unwrap();
 /// let max = all_values.max().unwrap();
 /// assert_eq!(min..=max, ATOMIC_NUMBER_RANGE);

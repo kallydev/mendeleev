@@ -9,7 +9,7 @@ use super::Element;
 ///
 /// ```
 /// use mendeleev::{Element, YearDiscovered, YEAR_DISCOVERED_RANGE};
-/// let all_values = Element::list().iter().flat_map(|e| match e.year_discovered() {
+/// let all_values = Element::iter().flat_map(|e| match e.year_discovered() {
 /// YearDiscovered::Known(year) => Some(year),
 /// _ => None
 /// });

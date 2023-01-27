@@ -12,7 +12,7 @@ use super::Element;
 ///
 /// ```
 /// use mendeleev::{Element, ATOMIC_WEIGHT_RANGE};
-/// let all_values = Element::list().iter().map(|e| f64::from(e.atomic_weight()));
+/// let all_values = Element::iter().map(|e| f64::from(e.atomic_weight()));
 /// let min = all_values.clone().min_by(|a, b| a.total_cmp(&b)).unwrap();
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, ATOMIC_WEIGHT_RANGE);

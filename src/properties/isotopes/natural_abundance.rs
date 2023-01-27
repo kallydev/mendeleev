@@ -9,7 +9,7 @@ use super::Isotope;
 ///
 /// ```
 /// use mendeleev::{Isotope, ISOTOPE_NATURAL_ABUNDANCE_RANGE};
-/// let all_values = Isotope::list().iter().flat_map(|e| e.natural_abundance());
+/// let all_values = Isotope::iter().flat_map(|e| e.natural_abundance());
 /// let min = all_values.clone().min_by(|a, b| a.total_cmp(&b)).unwrap();
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, ISOTOPE_NATURAL_ABUNDANCE_RANGE);

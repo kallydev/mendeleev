@@ -7,7 +7,7 @@ use super::Element;
 ///
 /// ```
 /// use mendeleev::{Element, FUSION_HEAT_RANGE};
-/// let all_values = Element::list().iter().flat_map(|e| e.fusion_heat());
+/// let all_values = Element::iter().flat_map(|e| e.fusion_heat());
 /// let min = all_values.clone().min_by(|a, b| a.total_cmp(&b)).unwrap();
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, FUSION_HEAT_RANGE);
