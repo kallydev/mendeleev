@@ -1,3 +1,5 @@
+Information on chemical elements and their isotopes
+
 [![Latest version](https://img.shields.io/crates/v/mendeleev.svg)](https://crates.io/crates/mendeleev)
 [![pipeline status](https://gitlab.com/ygor.souza/mendeleev/badges/main/pipeline.svg)](https://gitlab.com/ygor.souza/mendeleev/-/commits/main)
 [![Documentation](https://docs.rs/mendeleev/badge.svg)](https://docs.rs/mendeleev)
@@ -9,6 +11,48 @@
 Mendeleev is a crate containing all known chemical elements as an enum
 and as a list, as well as methods that return some properties for each
 of them.
+
+### Example
+
+Get data on a specific element
+
+```rust
+use mendeleev::Element;
+
+let element = Element::Si;
+assert_eq!(element.atomic_number(), 14);
+assert_eq!(element.name(), "Silicon");
+assert_eq!(format!("{}", element.electronic_configuration()), "[Ne] 3s² 3p²");
+```
+
+### Example
+
+Search the list of elements
+
+```rust
+use mendeleev::Element;
+
+// Find the element with the highest value for a given property
+let highest_melting_point = Element::iter().reduce(|acc, e| {
+    core::cmp::max_by(acc, e, |e1, e2| {
+        e1.melting_point()
+            .unwrap_or(0.0)
+            .total_cmp(&e2.melting_point().unwrap_or(0.0))
+    })
+});
+assert_eq!(highest_melting_point, Some(Element::C));
+
+// Iterate through the elements with no known year of discovery
+let mut ancient_elements = Element::iter()
+    .filter(|e| matches!(e.year_discovered(), mendeleev::YearDiscovered::Ancient));
+assert_eq!(ancient_elements.next(), Some(Element::C));
+assert_eq!(ancient_elements.next(), Some(Element::Al));
+
+// Find an element by name
+let iron = Element::iter().find(|e| e.name().eq_ignore_ascii_case("iron"));
+assert_eq!(iron, Some(Element::Fe));
+
+```
 
 It also contains most of the known isotopes for each element (naturally
 occurring, synthetic, or theoretical), accessible via a similar API as the
