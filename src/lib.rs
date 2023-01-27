@@ -1,7 +1,4 @@
-//! Mendeleev is a crate containing all known chemical elements as an enum
-//! and as a list, as well as methods that return some properties for each
-//! of them.
-
+#![doc = include_str!("../README.md")]
 #![no_std]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
