@@ -30,9 +30,16 @@ isotope_list = ["isotopes"]
 
 all_properties = ["all_element_properties", "all_isotope_properties"]
 
-all_element_properties = ["numeric_properties", "string_properties", "color_properties", "electronic_configuration"]
+all_element_properties = [
+"numeric_properties",
+"string_properties",
+"color_properties",
+"electronic_configuration",
+"oxidation_states",
+]
 
 electronic_configuration = []
+oxidation_states = []
 
 numeric_properties = ["atomic_number",  "atomic_radius", "atomic_weight", "group_number", "period", "year_discovered", "isotope_natural_abundance", "state_of_matter_properties"]
 atomic_number = []
