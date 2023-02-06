@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [0.7.0] - 2023-02-06
 
 ### Added
 - iter() method to iterate over elements, isotopes, and groups directly
@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Display for YearDiscovered, Color, and Atomic Weight no longer need the std feature
+
+### Deprecated
+- Color::html(). It is a trivial method, and the Display implementation already does the same thing
 
 ## [0.6.0] - 2022-12-18
 

@@ -87,11 +87,11 @@ elements themselves.
 - No dependencies
 - All properties are `const` or `'static`
 - Compatible with no-std
-- Most properties implement `Display` (requires std)
+- Most types implement `Display`
 - No `build.rs` file. All the data is directly in the code
 - Each of the available properties has its own file that can be excluded from
   the build with a feature flag, to reduce binary size and compilation time
-  when not all properties are needed,
+  when not all properties are needed
 - Numeric properties are accompanied by constants providing the range
   of values they can take
 - Documentation, tests, and examples
@@ -99,8 +99,9 @@ elements themselves.
 The data from this crate comes from the PyPI package
 [mendeleev](https://pypi.org/project/mendeleev), and some of it was
 verified from other sources. The end goal is to port all the data from
-that package and more, and make it all available as compile-time
-constants and selectable via feature flags.
+that package and more, and make it all available as compile-time constants and
+selectable via feature flags. Note that this crate is not maintained by the
+same authors as the PyPI package.
 
 ## Contributing
 
