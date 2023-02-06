@@ -147,4 +147,15 @@ impl Element {
     pub const fn list() -> &'static [Self] {
         &ALL_ELEMENTS
     }
+
+    /// Returns an iterator that yields all the elements by value, ordered by atomic number
+    ///
+    /// ```
+    /// use mendeleev::Element;
+    ///
+    /// assert_eq!(Element::iter().next(), Some(Element::H));
+    /// ```
+    pub fn iter() -> impl Iterator<Item = Self> + Clone {
+        ALL_ELEMENTS.into_iter()
+    }
 }

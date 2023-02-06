@@ -7,7 +7,7 @@ use super::Isotope;
 ///
 /// ```
 /// use mendeleev::{Isotope, ISOTOPE_NEUTRON_NUMBER_RANGE};
-/// let all_values = Isotope::list().iter().map(|e| e.neutron_number());
+/// let all_values = Isotope::iter().map(|e| e.neutron_number());
 /// let min = all_values.clone().min().unwrap();
 /// let max = all_values.max().unwrap();
 /// assert_eq!(min..=max, ISOTOPE_NEUTRON_NUMBER_RANGE);

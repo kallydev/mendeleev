@@ -1,5 +1,6 @@
+use core::fmt::{Display, Formatter};
 #[cfg(feature = "std")]
-use std::{fmt::Display, format, string::String};
+use std::string::{String, ToString};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 /// A 24-bit color value stored as R, G, and B bytes
@@ -13,6 +14,7 @@ pub struct Color {
 }
 
 #[cfg(feature = "std")]
+#[deprecated(since = "0.7.0", note = "Use color.to_string() instead")]
 impl Color {
     /// Returns the html string for this color.
     ///
@@ -21,39 +23,30 @@ impl Color {
     ///
     /// let color = Color{r: 0, g: 255, b: 255};
     /// assert_eq!(color.html(), "#00ffff");
+    /// let color = Color{r: 48, g: 64, b: 80};
+    /// assert_eq!(color.html(), "#304050");
     /// ```
     pub fn html(&self) -> String {
-        format!("#{:02x}{:02x}{:02x}", self.r, self.g, self.b)
+        self.to_string()
     }
 }
 
-#[cfg(feature = "std")]
+/// Displays the color as an HTML string.
+///
+/// ```
+/// use mendeleev::{Element, Color};
+///
+/// let color = Color{r: 0, g: 255, b: 255};
+/// assert_eq!(format!("{}", color), "#00ffff");
+/// let color = Color{r: 48, g: 64, b: 80};
+/// assert_eq!(format!("{}", color), "#304050");
+/// ```
 impl Display for Color {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        f.write_str(&self.html())
+    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
+        write!(f, "#{:02x}{:02x}{:02x}", self.r, self.g, self.b)
     }
 }
 
 pub(crate) const fn color(r: u8, g: u8, b: u8) -> Option<Color> {
     Some(Color { r, g, b })
-}
-
-#[cfg(test)]
-mod tests {
-    #[cfg(feature = "std")]
-    use super::*;
-
-    #[test]
-    #[cfg(feature = "std")]
-    fn generates_html_string() {
-        let cases = [
-            (Color { r: 0, g: 0, b: 0 }, "#000000"),
-            (Color { r: 255, g: 0, b: 0 }, "#ff0000"),
-            (Color { r: 0, g: 255, b: 0 }, "#00ff00"),
-            (Color { r: 0, g: 0, b: 255 }, "#0000ff"),
-        ];
-        for (cpk, html) in cases {
-            assert_eq!(cpk.html(), html);
-        }
-    }
 }

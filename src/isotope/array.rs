@@ -3573,7 +3573,7 @@ pub const ALL_ISOTOPES: [Isotope; N_ISOTOPES] = [
 ];
 
 impl Isotope {
-    /// Returns a slice containing all isotopes, ordered by atomic number and then mass number.
+    /// Returns a slice containing all isotopes, ordered by atomic number and then mass number
     ///
     /// ```
     /// use mendeleev::Isotope;
@@ -3585,5 +3585,17 @@ impl Isotope {
     /// ```
     pub const fn list() -> &'static [Self] {
         &ALL_ISOTOPES
+    }
+
+    /// Returns an iterator that yields all the isotopes by value, ordered by atomic number and
+    /// then mass number
+    ///
+    /// ```
+    /// use mendeleev::Isotope;
+    ///
+    /// assert_eq!(Isotope::iter().next(), Some(Isotope::H1));
+    /// ```
+    pub fn iter() -> impl Iterator<Item = Self> + Clone {
+        ALL_ISOTOPES.into_iter()
     }
 }

@@ -1,5 +1,4 @@
-#[cfg(feature = "std")]
-use std::fmt::Display;
+use core::fmt::{Display, Formatter};
 
 use super::Element;
 
@@ -10,7 +9,7 @@ use super::Element;
 ///
 /// ```
 /// use mendeleev::{Element, YearDiscovered, YEAR_DISCOVERED_RANGE};
-/// let all_values = Element::list().iter().flat_map(|e| match e.year_discovered() {
+/// let all_values = Element::iter().flat_map(|e| match e.year_discovered() {
 /// YearDiscovered::Known(year) => Some(year),
 /// _ => None
 /// });
@@ -30,9 +29,8 @@ pub enum YearDiscovered {
 }
 type Year = YearDiscovered;
 
-#[cfg(feature = "std")]
 impl Display for Year {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
         match self {
             Year::Ancient => f.write_str("Ancient"),
             Year::Known(year) => year.fmt(f),

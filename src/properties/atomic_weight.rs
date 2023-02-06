@@ -1,7 +1,7 @@
-use core::ops::RangeInclusive;
-
-#[cfg(feature = "std")]
-use std::{fmt::Display, format};
+use core::{
+    fmt::{Display, Formatter},
+    ops::RangeInclusive,
+};
 
 use super::Element;
 
@@ -12,7 +12,7 @@ use super::Element;
 ///
 /// ```
 /// use mendeleev::{Element, ATOMIC_WEIGHT_RANGE};
-/// let all_values = Element::list().iter().map(|e| f64::from(e.atomic_weight()));
+/// let all_values = Element::iter().map(|e| f64::from(e.atomic_weight()));
 /// let min = all_values.clone().min_by(|a, b| a.total_cmp(&b)).unwrap();
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, ATOMIC_WEIGHT_RANGE);
@@ -77,30 +77,36 @@ impl AtomicWeight {
     }
 }
 
-#[cfg(feature = "std")]
 impl Display for AtomicWeight {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> core::fmt::Result {
         fn get_precision(uncertainty: f64) -> (usize, u8) {
-            let precision = uncertainty.log10().floor().abs();
-            let digit = uncertainty * 10.0f64.powf(precision);
+            let mut digit = uncertainty;
+            let mut precision = 0u8;
+            while digit < 1.0 && precision < 15 {
+                digit *= 10.0;
+                precision = precision.saturating_add(1);
+            }
             (precision as usize, digit as u8)
         }
-        let s = match self {
+        match self {
             AtomicWeight::Interval {
                 range: _,
                 conventional,
-            } => format!("{}", conventional),
+            } => f.write_fmt(format_args!("{}", conventional)),
             AtomicWeight::Uncertainty {
                 weight,
                 uncertainty,
             } => {
                 let (precision, digit) = get_precision(*uncertainty);
-                format!("{w:.prec$}({u})", w = weight, prec = precision, u = digit)
+                f.write_fmt(format_args!(
+                    "{w:.prec$}({u})",
+                    w = weight,
+                    prec = precision,
+                    u = digit
+                ))
             }
-            AtomicWeight::MassNumber { number } => format!("[{}]", number),
-        };
-        f.write_str(&s)?;
-        Ok(())
+            AtomicWeight::MassNumber { number } => f.write_fmt(format_args!("[{}]", number)),
+        }
     }
 }
 

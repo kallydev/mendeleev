@@ -46,9 +46,8 @@ impl core::fmt::Display for SubshellLabel {
     }
 }
 
-#[cfg(feature = "std")]
 impl core::fmt::Display for Subshell {
-    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, formatter: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         if self.number_of_electrons == 1 {
             formatter.write_fmt(format_args!("{}{}", self.shell_number, self.subshell_label))?;
         } else {
@@ -56,14 +55,14 @@ impl core::fmt::Display for Subshell {
                 "{}{}{}",
                 self.shell_number,
                 self.subshell_label,
-                crate::to_superscript(self.number_of_electrons)
+                crate::superscript::Superscript::new(self.number_of_electrons)
             ))?;
         }
         Ok(())
     }
 }
 
-#[cfg(all(feature = "std", feature = "symbol"))]
+#[cfg(feature = "symbol")]
 impl core::fmt::Display for ElectronicConfiguration {
     /// Formats the electronic configuration according to the standard notation, with superscripts
     /// in utf8.
@@ -75,7 +74,7 @@ impl core::fmt::Display for ElectronicConfiguration {
     /// assert_eq!(Element::He.electronic_configuration().to_string(), "1s²");
     /// assert_eq!(Element::Si.electronic_configuration().to_string(), "[Ne] 3s² 3p²");
     /// ```
-    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, formatter: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         let mut first = true;
         if let Some(element) = self.noble_gas {
             formatter.write_fmt(format_args!("[{}]", element.symbol()))?;

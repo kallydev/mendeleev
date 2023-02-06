@@ -7,7 +7,7 @@ use super::Isotope;
 ///
 /// ```
 /// use mendeleev::{Isotope, ISOTOPE_MASS_NUMBER_RANGE};
-/// let all_values = Isotope::list().iter().map(|e| e.mass_number());
+/// let all_values = Isotope::iter().map(|e| e.mass_number());
 /// let min = all_values.clone().min().unwrap();
 /// let max = all_values.max().unwrap();
 /// assert_eq!(min..=max, ISOTOPE_MASS_NUMBER_RANGE);
