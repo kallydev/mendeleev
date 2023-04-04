@@ -3,6 +3,7 @@ use core::fmt::{Display, Formatter};
 use std::string::{String, ToString};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 /// A 24-bit color value stored as R, G, and B bytes
 pub struct Color {
     /// Red component

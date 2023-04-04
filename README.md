@@ -84,7 +84,8 @@ elements themselves.
 ## Features
 
 - No unsafe code
-- No dependencies
+- No required dependencies
+- Optional support for `serde`
 - All properties are `const` or `'static`
 - Compatible with no-std
 - Most types implement `Display`

@@ -7,6 +7,7 @@ pub use array::ALL_ELEMENTS;
 pub const N_ELEMENTS: usize = 118;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 /// Each of the known chemical elements
 pub enum Element {
     /// Hydrogen

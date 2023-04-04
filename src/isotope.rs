@@ -10,6 +10,7 @@ mod display;
 pub const N_ISOTOPES: usize = 3557;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 /// Each theoretical or observed isotope of the known chemical elements
 pub enum Isotope {
     /// Hydrogen-1 (protium)
