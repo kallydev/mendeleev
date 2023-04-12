@@ -20,6 +20,7 @@ use super::Element;
 pub const YEAR_DISCOVERED_RANGE: core::ops::RangeInclusive<u16> = 1669..=2010;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 /// The year in which an element was discovered, if known
 pub enum YearDiscovered {
     /// Element known since ancient times, year of discovery not known

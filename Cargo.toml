@@ -5,7 +5,7 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 authors = ["Ygor Souza <ygor.souza@protonmail.com>"]
 description = "List of chemical elements, their isotopes, and their properties"
-categories = ["science", "no-std"]
+categories = ["science", "no-std", "no-std::no-alloc"]
 keywords = ["periodic-table", "chemistry", "isotope", "atom", "atomic"]
 readme = "README.md"
 homepage = "https://gitlab.com/ygor.souza/mendeleev"
@@ -14,13 +14,14 @@ repository = "https://gitlab.com/ygor.souza/mendeleev"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+serde = { version = "1.0", optional = true, features = ["derive"] }
 
 [features]
 default = ["all_features"]
 
 all_features = ["all_no_std_features", "std"]
 all_no_std_features = ["all_properties", "all_lists", "ranges"]
-std = []
+std = ["serde?/std"]
 ranges = []
 
 all_lists = ["element_list", "isotope_list", "group_list"]
@@ -30,18 +31,12 @@ isotope_list = ["isotopes"]
 
 all_properties = ["all_element_properties", "all_isotope_properties"]
 
-all_element_properties = [
-"numeric_properties",
-"string_properties",
-"color_properties",
-"electronic_configuration",
-"oxidation_states",
-]
+all_element_properties = ["numeric_properties", "string_properties", "color_properties", "electronic_configuration", "oxidation_states"]
 
 electronic_configuration = []
 oxidation_states = []
 
-numeric_properties = ["atomic_number",  "atomic_radius", "atomic_weight", "group_number", "period", "year_discovered", "isotope_natural_abundance", "state_of_matter_properties"]
+numeric_properties = ["atomic_number", "atomic_radius", "atomic_weight", "group_number", "period", "year_discovered", "isotope_natural_abundance", "state_of_matter_properties"]
 atomic_number = []
 atomic_radius = []
 atomic_weight = []

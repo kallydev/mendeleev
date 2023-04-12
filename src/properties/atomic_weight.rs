@@ -20,6 +20,7 @@ use super::Element;
 pub const ATOMIC_WEIGHT_RANGE: RangeInclusive<f64> = 1.008..=294.0;
 
 #[derive(Clone, Debug, PartialEq)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 /// The Standard Atomic Weight as defined by the CIAAW
 pub enum AtomicWeight {
     /// Value defined as an interval

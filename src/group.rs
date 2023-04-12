@@ -7,6 +7,7 @@ pub use array::ALL_GROUPS;
 pub const N_GROUPS: usize = 18;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 /// Each group in the periodic table
 pub enum Group {
     /// Alkali metals

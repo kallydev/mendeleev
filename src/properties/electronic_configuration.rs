@@ -2,6 +2,7 @@ use super::Element;
 use super::Element::*;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 /// Electron subshell type, based on the azimuthal quantum number ℓ
 pub enum SubshellLabel {
     /// ℓ = 0, historical name "Sharp"
@@ -16,6 +17,8 @@ pub enum SubshellLabel {
     G,
 }
 
+#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 /// A subshell (s, p, d, or f) in the electronic configuration
 pub struct Subshell {
     /// The shell's principal quantum number
@@ -26,6 +29,7 @@ pub struct Subshell {
     pub number_of_electrons: u32,
 }
 
+#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 /// The electronic configuration of an atom
 pub struct ElectronicConfiguration {
     /// The noble gas of the preceding period, if any

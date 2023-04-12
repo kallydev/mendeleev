@@ -1,6 +1,8 @@
 use super::Element;
 use super::Element::*;
 
+#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 /// The category of the oxidation state, to distinguish common and uncommon states
 pub enum OxidationStateCategory {
     /// Most common oxidation states
@@ -10,8 +12,6 @@ pub enum OxidationStateCategory {
     /// All oxidation states, i.e., Main + Extended
     All,
 }
-
-use OxidationStateCategory::*;
 
 impl Element {
     /// Returns the element's oxidation states for the given `category`.
@@ -25,6 +25,7 @@ impl Element {
     /// assert_eq!(Element::N.oxidation_states(All), [-3, -2, -1, 0, 1, 2, 3, 4, 5]);
     /// ```
     pub const fn oxidation_states(&self, category: OxidationStateCategory) -> &'static [i8] {
+        use OxidationStateCategory::*;
         match (self, category) {
             (H, Main) => &[-1, 1],
             (H, Extended) => &[],
