@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Optional support for serde
+- Types Kelvin, KiloJoulePerMol, Picometer, and Percent
 
 ## [0.7.0] - 2023-02-06
 

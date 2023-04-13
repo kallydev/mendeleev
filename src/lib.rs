@@ -9,11 +9,13 @@ extern crate std;
 
 mod element;
 mod isotope;
+mod newtypes;
 mod properties;
 mod superscript;
 
 pub use element::*;
 pub use isotope::*;
+pub use newtypes::*;
 pub use properties::*;
 
 #[cfg(feature = "group")]
