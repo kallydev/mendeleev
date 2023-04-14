@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Optional support for serde
 - Types Kelvin, KiloJoulePerMol, Picometer, and Percent
 
+### Changed
+- `Element::atomic_radius()` return type changed to `Option<Picometer>`
+
 ## [0.7.0] - 2023-02-06
 
 ### Added
