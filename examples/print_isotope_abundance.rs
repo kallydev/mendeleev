@@ -9,7 +9,7 @@ fn main() {
             .filter(|isotope| &isotope.element() == element)
             .flat_map(|isotope| {
                 let abundance = isotope.natural_abundance()?;
-                print!("{}: {}%, ", isotope.display_with_superscript(), abundance);
+                print!("{}: {}, ", isotope.display_with_superscript(), abundance);
                 Some(())
             })
             .count();
