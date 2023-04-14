@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Element::atomic_radius()` return type changed to `Option<Picometer>`
 - `Element::melting_point()` return type changed to `Option<Kelvin>`
 - `Element::boiling_point()` return type changed to `Option<Kelvin>`
+- `Element::fusion_heat()` return type changed to `Option<KiloJoulePerMol>`
+- `Element::evaporation_heat()` return type changed to `Option<KiloJoulePerMol>`
 
 ## [0.7.0] - 2023-02-06
 
