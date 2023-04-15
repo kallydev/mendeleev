@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New type `Picometer` for atomic radius
 - New type `Percent` for isotope abundance
 - New type `GramPerCubicCentimeter` for density
+- Density property (from PubChem)
+
 
 ### Changed
 - `Element::atomic_radius()` return type changed to `Option<Picometer>`
