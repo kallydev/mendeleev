@@ -30,14 +30,14 @@ assert_eq!(format!("{}", element.electronic_configuration()), "[Ne] 3s² 3p²");
 Search the list of elements
 
 ```rust
-use mendeleev::Element;
+use mendeleev::{Element, Kelvin};
 
 // Find the element with the highest value for a given property
 let highest_melting_point = Element::iter().reduce(|acc, e| {
     core::cmp::max_by(acc, e, |e1, e2| {
         e1.melting_point()
-            .unwrap_or(0.0)
-            .total_cmp(&e2.melting_point().unwrap_or(0.0))
+            .unwrap_or(Kelvin(0.0))
+            .total_cmp(&e2.melting_point().unwrap_or(Kelvin(0.0)))
     })
 });
 assert_eq!(highest_melting_point, Some(Element::C));
