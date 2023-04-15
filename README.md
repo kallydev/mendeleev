@@ -97,12 +97,20 @@ elements themselves.
   of values they can take
 - Documentation, tests, and examples
 
-The data from this crate comes from the PyPI package
-[mendeleev](https://pypi.org/project/mendeleev), and some of it was
-verified from other sources. The end goal is to port all the data from
-that package and more, and make it all available as compile-time constants and
-selectable via feature flags. Note that this crate is not maintained by the
-same authors as the PyPI package.
+## Data sources
+
+The data from this crate comes from the following sources:
+
+- Density, electron affinity, and ionization energy:
+    - National Center for Biotechnology Information (2023). Periodic Table of
+      Elements. Retrieved April 15, 2023 from
+      <https://pubchem.ncbi.nlm.nih.gov/periodic-table/>.
+
+- Other properties:
+    - PyPI package mendeleev, version 0.12.0.
+      <https://pypi.org/project/mendeleev/0.12.0/>.
+
+Note that this crate is not maintained by the same authors as the PyPI package.
 
 ## Contributing
 
