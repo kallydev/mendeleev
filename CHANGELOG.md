@@ -9,7 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Optional support for serde
-- Types Kelvin, KiloJoulePerMol, Picometer, and Percent
+- New type `Kelvin` for temperature (melting/boiling point)
+- New type `KiloJoulePerMol` for heat of fusion/evaporation
+- New type `Picometer` for atomic radius
+- New type `Percent` for isotope abundance
+- New type `GramPerCubicCentimeter` for density
 
 ### Changed
 - `Element::atomic_radius()` return type changed to `Option<Picometer>`
