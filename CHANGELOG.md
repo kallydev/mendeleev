@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New type `Electronvolt` for electron affinity and ionization energy
 - Density property (from PubChem)
 - Electron affinity property (from PubChem)
+- Ionization energy property (from PubChem)
 
 
 ### Changed
