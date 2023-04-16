@@ -1,5 +1,5 @@
 use super::Element;
-use crate::KiloJoulePerMol;
+use crate::KiloJoulePerMole;
 
 #[cfg(feature = "ranges")]
 /// Range from the minimum to the maximum fusion heat across all elements
@@ -13,12 +13,12 @@ use crate::KiloJoulePerMol;
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, FUSION_HEAT_RANGE);
 /// ```
-pub const FUSION_HEAT_RANGE: core::ops::RangeInclusive<KiloJoulePerMol> =
-    KiloJoulePerMol(0.117)..=KiloJoulePerMol(102.5);
+pub const FUSION_HEAT_RANGE: core::ops::RangeInclusive<KiloJoulePerMole> =
+    KiloJoulePerMole(0.117)..=KiloJoulePerMole(102.5);
 
 macro_rules! kj {
     ($value:literal) => {
-        Some(KiloJoulePerMol($value))
+        Some(KiloJoulePerMole($value))
     };
 }
 
@@ -26,11 +26,11 @@ impl Element {
     /// Returns the element's fusion heat, if known.
     ///
     /// ```
-    /// use mendeleev::{Element, KiloJoulePerMol};
-    /// assert_eq!(Element::H.fusion_heat(), Some(KiloJoulePerMol(0.117)));
+    /// use mendeleev::{Element, KiloJoulePerMole};
+    /// assert_eq!(Element::H.fusion_heat(), Some(KiloJoulePerMole(0.117)));
     /// assert_eq!(Element::Og.fusion_heat(), None);
     /// ```
-    pub const fn fusion_heat(&self) -> Option<KiloJoulePerMol> {
+    pub const fn fusion_heat(&self) -> Option<KiloJoulePerMole> {
         use Element::*;
         match self {
             H => kj!(0.117),
