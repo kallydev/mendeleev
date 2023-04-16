@@ -106,3 +106,4 @@ newtype_f64!(
     "grams per cubic centimeter",
     "g/cm³"
 );
+newtype_f64!(Electronvolt, "electronvolts", "eV");
