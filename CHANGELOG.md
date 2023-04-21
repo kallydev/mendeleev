@@ -5,18 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [0.8.0] - 2023-04-21
 
 ### Added
 - Optional support for serde
-- Types Kelvin, KiloJoulePerMol, Picometer, and Percent
+- New type `Kelvin` for temperature (melting/boiling point)
+- New type `KiloJoulePerMole` for heat of fusion/evaporation
+- New type `Picometer` for atomic radius
+- New type `Percent` for isotope abundance
+- New type `GramPerCubicCentimeter` for density
+- New type `Electronvolt` for electron affinity and ionization energy
+- Density property (from PubChem)
+- Electron affinity property (from PubChem)
+- Ionization energy property (from PubChem)
+
 
 ### Changed
 - `Element::atomic_radius()` return type changed to `Option<Picometer>`
 - `Element::melting_point()` return type changed to `Option<Kelvin>`
 - `Element::boiling_point()` return type changed to `Option<Kelvin>`
-- `Element::fusion_heat()` return type changed to `Option<KiloJoulePerMol>`
-- `Element::evaporation_heat()` return type changed to `Option<KiloJoulePerMol>`
+- `Element::fusion_heat()` return type changed to `Option<KiloJoulePerMole>`
+- `Element::evaporation_heat()` return type changed to `Option<KiloJoulePerMole>`
 - `Isotope::natural_abundance()` return type changed to `Option<Percent>`
 
 ## [0.7.0] - 2023-02-06

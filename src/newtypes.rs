@@ -99,5 +99,11 @@ macro_rules! newtype_f64 {
 
 newtype_f64!(Percent, "percent", "%");
 newtype_f64!(Picometer, "picometers", "pm");
-newtype_f64!(KiloJoulePerMol, "kilojoules per mol", "kJ/mol");
+newtype_f64!(KiloJoulePerMole, "kilojoules per mole", "kJ/mol");
 newtype_f64!(Kelvin, "Kelvin", "K");
+newtype_f64!(
+    GramPerCubicCentimeter,
+    "grams per cubic centimeter",
+    "g/cm³"
+);
+newtype_f64!(Electronvolt, "electronvolts", "eV");

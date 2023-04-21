@@ -1,6 +1,6 @@
 [package]
 name = "mendeleev"
-version = "0.7.0"
+version = "0.8.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 authors = ["Ygor Souza <ygor.souza@protonmail.com>"]
@@ -36,7 +36,7 @@ all_element_properties = ["numeric_properties", "string_properties", "color_prop
 electronic_configuration = []
 oxidation_states = []
 
-numeric_properties = ["atomic_number", "atomic_radius", "atomic_weight", "group_number", "period", "year_discovered", "isotope_natural_abundance", "state_of_matter_properties"]
+numeric_properties = ["atomic_number", "atomic_radius", "atomic_weight", "group_number", "period", "density", "electron_affinity", "ionization_energy", "year_discovered", "isotope_natural_abundance", "state_of_matter_properties"]
 atomic_number = []
 atomic_radius = []
 atomic_weight = []
@@ -44,6 +44,9 @@ group_number = ["group"]
 year_discovered = []
 group = []
 period = []
+density = []
+electron_affinity = []
+ionization_energy = []
 
 state_of_matter_properties = ["melting_point", "boiling_point", "fusion_heat", "evaporation_heat"]
 melting_point = []

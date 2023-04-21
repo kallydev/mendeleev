@@ -1,5 +1,5 @@
 use super::Element;
-use crate::KiloJoulePerMol;
+use crate::KiloJoulePerMole;
 
 #[cfg(feature = "ranges")]
 /// Range from the minimum to the maximum evaporation heat across all elements
@@ -13,12 +13,12 @@ use crate::KiloJoulePerMol;
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, EVAPORATION_HEAT_RANGE);
 /// ```
-pub const EVAPORATION_HEAT_RANGE: core::ops::RangeInclusive<KiloJoulePerMol> =
-    KiloJoulePerMol(0.08)..=KiloJoulePerMol(824.0);
+pub const EVAPORATION_HEAT_RANGE: core::ops::RangeInclusive<KiloJoulePerMole> =
+    KiloJoulePerMole(0.08)..=KiloJoulePerMole(824.0);
 
 macro_rules! kj {
     ($value:literal) => {
-        Some(KiloJoulePerMol($value))
+        Some(KiloJoulePerMole($value))
     };
 }
 
@@ -26,10 +26,10 @@ impl Element {
     /// Returns the element's evaporation heat, if known.
     ///
     /// ```
-    /// use mendeleev::{Element, KiloJoulePerMol};
-    /// assert_eq!(Element::H.evaporation_heat(), Some(KiloJoulePerMol(0.904)));
+    /// use mendeleev::{Element, KiloJoulePerMole};
+    /// assert_eq!(Element::H.evaporation_heat(), Some(KiloJoulePerMole(0.904)));
     /// ```
-    pub const fn evaporation_heat(&self) -> Option<KiloJoulePerMol> {
+    pub const fn evaporation_heat(&self) -> Option<KiloJoulePerMole> {
         use Element::*;
         match self {
             H => kj!(0.904),
