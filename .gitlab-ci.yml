@@ -7,6 +7,7 @@ default:
 
 stages:
   - test
+  - pages
 
 test:
   stage: test
@@ -17,3 +18,12 @@ test:
     - cargo test
     - cargo test --no-default-features --features all_no_std_features
     - cargo test --no-default-features --features all_no_std_features,serde
+
+pages:
+  stage: pages
+  script:
+    - cargo doc --no-deps --all-features
+    - mv target/doc public
+  artifacts:
+    paths:
+      - public
