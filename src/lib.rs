@@ -3,6 +3,8 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![warn(clippy::unwrap_used)]
+#![warn(clippy::wildcard_imports)]
+#![warn(clippy::enum_glob_use)]
 
 #[cfg(feature = "std")]
 extern crate std;
