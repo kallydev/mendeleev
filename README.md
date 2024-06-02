@@ -106,6 +106,12 @@ The data from this crate comes from the following sources:
       Elements. Retrieved April 15, 2023 from
       <https://pubchem.ncbi.nlm.nih.gov/periodic-table/>.
 
+- Melting point, boiling point:
+    - PyPI package mendeleev, version 0.16.2.
+      <https://pypi.org/project/mendeleev/0.16.2/>. The data originally comes
+    from W.M. Haynes. CRC Handbook of Chemistry and Physics. CRC Press, 97th
+    edition, 2016. ISBN 9781498754293.
+
 - Other properties:
     - PyPI package mendeleev, version 0.12.0.
       <https://pypi.org/project/mendeleev/0.12.0/>.
