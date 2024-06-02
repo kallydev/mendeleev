@@ -12,23 +12,23 @@ msrv:
   stage: checks
   script:
     - rustup toolchain install 1.62
-    - cargo +1.62 check --all-features
+    - cargo +1.62 check --quiet --all-features
 
 fmt:
   stage: checks
   script:
-    - cargo fmt --check --verbose
+    - cargo fmt --check --quiet
 
 lint:
   stage: checks
   script:
-    - cargo clippy --profile test -- -D warnings
-    - cargo clippy --profile test --features serde -- -D warnings
+    - cargo clippy --quiet --profile test -- -D warnings
+    - cargo clippy --quiet --profile test --features serde -- -D warnings
 
 test:
   stage: checks
   script:
-    - cargo test
-    - cargo test --no-default-features --features all_no_std_features
-    - cargo test --no-default-features --features all_no_std_features,serde
-    - cargo test --all-features
+    - cargo test --quiet
+    - cargo test --quiet --no-default-features --features all_no_std_features
+    - cargo test --quiet --no-default-features --features all_no_std_features,serde
+    - cargo test --quiet --all-features
