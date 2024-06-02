@@ -9,6 +9,7 @@ macro_rules! prop {
         #[cfg(feature = $feature)]
         mod $mod;
         #[cfg(feature = $feature)]
+        #[allow(unused_imports)]
         pub use $mod::*;
     };
 }
