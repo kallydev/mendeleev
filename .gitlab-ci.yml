@@ -6,10 +6,16 @@ default:
     - cargo --version
 
 stages:
-  - test
+  - checks
+
+msrv:
+  stage: checks
+  script:
+    - rustup toolchain install 1.62
+    - cargo +1.62 check --all-features
 
 test:
-  stage: test
+  stage: checks
   script:
     - cargo fmt --check --verbose
     - cargo clippy --profile test -- -D warnings
