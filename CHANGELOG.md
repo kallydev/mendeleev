@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.1] - 2024-06-05
+
+### Changed
+- Updated melting point and boiling point data to mendeleev (PyPI) v0.16.2
+
 ## [0.8.0] - 2023-04-21
 
 ### Added
@@ -18,7 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Density property (from PubChem)
 - Electron affinity property (from PubChem)
 - Ionization energy property (from PubChem)
-
 
 ### Changed
 - `Element::atomic_radius()` return type changed to `Option<Picometer>`
