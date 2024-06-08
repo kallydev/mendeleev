@@ -1557,7 +1557,7 @@ impl Isotope {
             I::Te123 => pct!(0.89),
             I::Te124 => pct!(4.74),
             I::Te125 => pct!(7.07),
-            I::Te126 => pct!(8.84),
+            I::Te126 => pct!(18.84),
             I::Te127 => None,
             I::Te128 => pct!(31.74),
             I::Te129 => None,
