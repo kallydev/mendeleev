@@ -1,5 +1,3 @@
-Information on chemical elements and their isotopes
-
 [![Latest version](https://img.shields.io/crates/v/mendeleev.svg)](https://crates.io/crates/mendeleev)
 [![pipeline status](https://gitlab.com/ygor.souza/mendeleev/badges/main/pipeline.svg)](https://gitlab.com/ygor.souza/mendeleev/-/commits/main)
 [![Documentation](https://docs.rs/mendeleev/badge.svg)](https://docs.rs/mendeleev)
@@ -99,22 +97,19 @@ elements themselves.
 
 ## Data sources
 
-The data from this crate comes from the following sources:
+The data available in this crate comes from the following sources:
 
 - Density, electron affinity, and ionization energy:
     - National Center for Biotechnology Information (2023). Periodic Table of
       Elements. Retrieved April 15, 2023 from
       <https://pubchem.ncbi.nlm.nih.gov/periodic-table/>.
 
-- Melting point, boiling point:
-    - PyPI package mendeleev, version 0.16.2.
-      <https://pypi.org/project/mendeleev/0.16.2/>. The data originally comes
-    from W.M. Haynes. CRC Handbook of Chemistry and Physics. CRC Press, 97th
-    edition, 2016. ISBN 9781498754293.
-
 - Other properties:
-    - PyPI package mendeleev, version 0.12.0.
-      <https://pypi.org/project/mendeleev/0.12.0/>.
+    - PyPI package mendeleev, version 0.17.0.
+      <https://pypi.org/project/mendeleev/0.17.0/>.
+
+For the data sources used by the PyPI package, see
+<https://mendeleev.readthedocs.io/en/latest/data.html>
 
 Note that this crate is not maintained by the same authors as the PyPI package.
 

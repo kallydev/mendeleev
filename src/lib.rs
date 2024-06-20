@@ -1,3 +1,5 @@
+//! Information on chemical elements and their isotopes
+//!
 #![doc = include_str!("../README.md")]
 #![no_std]
 #![forbid(unsafe_code)]
