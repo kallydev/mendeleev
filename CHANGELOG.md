@@ -5,12 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [0.8.2] - 2024-11-01
 
 ### Changed
 - Updated the natural abundance of Te-126 to match mendeleev (PyPI) v0.18.1
 - Updated the electronic configuration of Lr to match mendeleev (PyPI) v0.18.1
 - Checked that all other data matches mendeleev (PyPI) v0.18.1
+
+### Fixed
+- In the electronic configuration, subshells with 10 or more electrons were truncated to one digit
 
 ## [0.8.1] - 2024-06-05
 
