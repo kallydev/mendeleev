@@ -8,8 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Changed
-- Updated the natural abundance of Te-126 to match mendeleev (PyPI) v0.17.0
-- Checked that all other data matches mendeleev (PyPI) v0.17.0
+- Updated the natural abundance of Te-126 to match mendeleev (PyPI) v0.18.1
+- Updated the electronic configuration of Lr to match mendeleev (PyPI) v0.18.1
+- Checked that all other data matches mendeleev (PyPI) v0.18.1
 
 ## [0.8.1] - 2024-06-05
 
