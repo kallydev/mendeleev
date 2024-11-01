@@ -105,7 +105,7 @@ The data available in this crate comes from the following sources:
       <https://pubchem.ncbi.nlm.nih.gov/periodic-table/>.
 
 - Other properties:
-    - PyPI package mendeleev, version 0.17.0.
+    - PyPI package mendeleev, version 0.18.1.
       <https://pypi.org/project/mendeleev/0.17.0/>.
 
 For the data sources used by the PyPI package, see
