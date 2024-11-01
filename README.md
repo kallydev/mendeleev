@@ -106,7 +106,7 @@ The data available in this crate comes from the following sources:
 
 - Other properties:
     - PyPI package mendeleev, version 0.18.1.
-      <https://pypi.org/project/mendeleev/0.17.0/>.
+      <https://pypi.org/project/mendeleev/0.18.1/>.
 
 For the data sources used by the PyPI package, see
 <https://mendeleev.readthedocs.io/en/latest/data.html>
