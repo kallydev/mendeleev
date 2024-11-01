@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated the electronic configuration of Lr to match mendeleev (PyPI) v0.18.1
 - Checked that all other data matches mendeleev (PyPI) v0.18.1
 
+### Fixed
+- In the electronic configuration, subshells with 10 or more electrons were truncated to one digit
+
 ## [0.8.1] - 2024-06-05
 
 ### Changed
