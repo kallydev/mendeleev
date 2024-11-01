@@ -68,11 +68,12 @@ symbol = []
 discoverers = []
 discovery_location = []
 
-all_isotope_properties = ["isotope_element", "isotope_mass_number", "isotope_natural_abundance", "isotope_neutron_number", "isotope_display"]
+all_isotope_properties = ["isotope_element", "isotope_mass_number", "isotope_natural_abundance", "isotope_neutron_number", "isotope_half_life", "isotope_display"]
 isotope_element = ["isotopes"]
 isotope_natural_abundance = ["isotopes"]
 isotope_mass_number = ["isotopes"]
 isotope_neutron_number = ["atomic_number", "isotope_mass_number", "isotope_element"]
+isotope_half_life = ["isotopes"]
 isotope_display = ["isotopes", "isotope_mass_number", "name", "symbol"]
 isotopes = []
 
