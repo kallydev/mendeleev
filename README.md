@@ -78,6 +78,7 @@ elements themselves.
 - Relative natural abundance on Earth
 - Mass number
 - Neutron number
+- Half-life
 
 ## Features
 
