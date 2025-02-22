@@ -14,3 +14,4 @@ prop!(natural_abundance, "isotope_natural_abundance");
 prop!(element, "isotope_element");
 prop!(mass_number, "isotope_mass_number");
 prop!(neutron_number, "isotope_neutron_number");
+prop!(half_life, "isotope_half_life");

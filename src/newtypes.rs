@@ -107,3 +107,153 @@ newtype_f64!(
     "g/cm³"
 );
 newtype_f64!(Electronvolt, "electronvolts", "eV");
+
+/// A unit of time
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+pub enum TimeUnit {
+    /// 10^-24 seconds
+    Yoctosecond,
+
+    /// 10^-21 seconds
+    Zeptosecond,
+
+    /// 10^-18 seconds
+    Attosecond,
+
+    /// 10^-15 seconds
+    Femtosecond,
+
+    /// 10^-12 seconds
+    Picosecond,
+
+    /// 10^-9 seconds
+    Nanosecond,
+
+    /// 10^-6 seconds
+    Microsecond,
+
+    /// 10^-3 seconds
+    Millisecond,
+
+    /// SI standard second
+    Second,
+
+    /// 60 seconds
+    Minute,
+
+    /// 60 minutes
+    Hour,
+
+    /// 24 hours
+    Day,
+
+    /// 365 days
+    Year,
+
+    /// 10^3 years
+    Kiloyear,
+
+    /// 10^6 years
+    Megayear,
+
+    /// 10^9 years
+    Gigayear,
+
+    /// 10^12 years
+    Terayear,
+
+    /// 10^15 years
+    Petayear,
+
+    /// 10^18 years
+    Exayear,
+
+    /// 10^21 years
+    Zettayear,
+
+    /// 10^24 years
+    Yottayear,
+}
+
+impl TimeUnit {
+    /// The value of this unit in seconds
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use mendeleev::TimeUnit;
+    ///
+    /// assert_eq!(TimeUnit::Second.seconds(), 1.0);
+    /// assert_eq!(TimeUnit::Minute.seconds(), 60.0);
+    /// assert_eq!(TimeUnit::Hour.seconds(), 60.0 * TimeUnit::Minute.seconds());
+    /// assert_eq!(TimeUnit::Day.seconds(), 24.0 * TimeUnit::Hour.seconds());
+    /// assert_eq!(TimeUnit::Year.seconds(), 365.0 * TimeUnit::Day.seconds());
+    /// ```
+    pub const fn seconds(&self) -> f64 {
+        match self {
+            Self::Yoctosecond => 1e-24,
+            Self::Zeptosecond => 1e-21,
+            Self::Attosecond => 1e-18,
+            Self::Femtosecond => 1e-18,
+            Self::Picosecond => 1e-18,
+            Self::Nanosecond => 1e-9,
+            Self::Microsecond => 1e-6,
+            Self::Millisecond => 1e-3,
+            Self::Second => 1.0,
+            Self::Minute => 60.0,
+            Self::Hour => 3600.0,
+            Self::Day => 86400.0,
+            Self::Year => 31536000.0,
+            Self::Kiloyear => 31536000e3,
+            Self::Megayear => 31536000e6,
+            Self::Gigayear => 31536000e9,
+            Self::Terayear => 31536000e12,
+            Self::Petayear => 31536000e15,
+            Self::Exayear => 31536000e18,
+            Self::Zettayear => 31536000e21,
+            Self::Yottayear => 31536000e24,
+        }
+    }
+
+    /// The SI abbreviation for this unit
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use mendeleev::TimeUnit;
+    ///
+    /// assert_eq!(TimeUnit::Microsecond.abbreviation(), "µs");
+    /// assert_eq!(TimeUnit::Second.abbreviation(), "s");
+    /// assert_eq!(TimeUnit::Minute.abbreviation(), "min");
+    /// assert_eq!(TimeUnit::Hour.abbreviation(), "h");
+    /// assert_eq!(TimeUnit::Day.abbreviation(), "d");
+    /// assert_eq!(TimeUnit::Year.abbreviation(), "a");
+    /// assert_eq!(TimeUnit::Megayear.abbreviation(), "Ma");
+    /// ```
+    pub const fn abbreviation(&self) -> &'static str {
+        match self {
+            Self::Yoctosecond => "ys",
+            Self::Zeptosecond => "zs",
+            Self::Attosecond => "as",
+            Self::Femtosecond => "fs",
+            Self::Picosecond => "ps",
+            Self::Nanosecond => "ns",
+            Self::Microsecond => "µs",
+            Self::Millisecond => "ms",
+            Self::Second => "s",
+            Self::Minute => "min",
+            Self::Hour => "h",
+            Self::Day => "d",
+            Self::Year => "a",
+            Self::Kiloyear => "ka",
+            Self::Megayear => "Ma",
+            Self::Gigayear => "Ga",
+            Self::Terayear => "Ta",
+            Self::Petayear => "Pa",
+            Self::Exayear => "Ea",
+            Self::Zettayear => "Za",
+            Self::Yottayear => "Ya",
+        }
+    }
+}
