@@ -38,7 +38,7 @@ let highest_melting_point = Element::iter().reduce(|acc, e| {
             .total_cmp(&e2.melting_point().unwrap_or(Kelvin(0.0)))
     })
 });
-assert_eq!(highest_melting_point, Some(Element::C));
+assert_eq!(highest_melting_point, Some(Element::W));
 
 // Iterate through the elements with no known year of discovery
 let mut ancient_elements = Element::iter()
@@ -106,8 +106,8 @@ The data available in this crate comes from the following sources:
       <https://pubchem.ncbi.nlm.nih.gov/periodic-table/>.
 
 - Other properties:
-    - PyPI package mendeleev, version 0.18.1.
-      <https://pypi.org/project/mendeleev/0.18.1/>.
+    - PyPI package mendeleev, version 1.0.0.
+      <https://pypi.org/project/mendeleev/1.0.0/>.
 
 For the data sources used by the PyPI package, see
 <https://mendeleev.readthedocs.io/en/latest/data.html>
