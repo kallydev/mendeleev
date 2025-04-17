@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.4] - 2025-04-17
+
+### Changed
+- Updated element groups to match mendeleev (PyPI) v1.0.0
+- Updated oxidation states to match mendeleev (PyPI) v1.0.0
+- Updated Carbon melting point to `None` to match mendeleev (PyPI) v1.0.0
+- Checked that all other data matches mendeleev (PyPI) v1.0.0
+
 ## [0.8.3] - 2025-02-22
 
 ### Added
