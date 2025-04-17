@@ -13,7 +13,7 @@ use crate::Kelvin;
 /// let max = all_values.max_by(|a, b| a.total_cmp(&b)).unwrap();
 /// assert_eq!(min..=max, MELTING_POINT_RANGE);
 /// ```
-pub const MELTING_POINT_RANGE: core::ops::RangeInclusive<Kelvin> = Kelvin(13.99)..=Kelvin(4762.15);
+pub const MELTING_POINT_RANGE: core::ops::RangeInclusive<Kelvin> = Kelvin(13.99)..=Kelvin(3687.15);
 
 macro_rules! kel {
     ($value:literal) => {
@@ -33,8 +33,8 @@ impl Element {
     /// ```
     /// use mendeleev::{Element, Kelvin};
     /// assert_eq!(Element::H.melting_point(), Some(Kelvin(13.99)));
-    /// // Graphite at 10.3 MPa
-    /// assert_eq!(Element::C.melting_point(), Some(Kelvin(4762.15)));
+    /// // Carbon allotropes have no melting point at standard pressure
+    /// assert_eq!(Element::C.melting_point(), None);
     /// // White phosphorus
     /// assert_eq!(Element::P.melting_point(), Some(Kelvin(317.3)));
     /// assert_eq!(Element::Og.melting_point(), None);
@@ -47,7 +47,7 @@ impl Element {
             E::Li => kel!(453.65),
             E::Be => kel!(1560.15),
             E::B => kel!(2350.15),
-            E::C => kel!(4762.15), // graphite
+            E::C => None, // graphite
             E::N => kel!(63.15),
             E::O => kel!(54.36),
             E::F => kel!(53.48),
