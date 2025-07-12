@@ -3,6 +3,7 @@
 [![Documentation](https://docs.rs/mendeleev/badge.svg)](https://docs.rs/mendeleev)
 [![unsafe forbidden](https://img.shields.io/badge/unsafe-forbidden-success.svg)](https://github.com/rust-secure-code/safety-dance/)
 [![License](https://img.shields.io/crates/l/mendeleev.svg)](https://crates.io/crates/mendeleev)
+[![MSRV](https://img.shields.io/crates/msrv/mendeleev.svg)](https://crates.io/crates/mendeleev)
 
 # Mendeleev
 
