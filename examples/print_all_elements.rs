@@ -2,7 +2,8 @@ use mendeleev::Element;
 
 /// Prints all the elements and their properties to stdout, as a tab-separated table
 fn main() {
-    let columns: Vec<(&str, Box<dyn Fn(&Element) -> String>)> = vec![
+    type TableColumn<'a> = (&'a str, Box<dyn Fn(&Element) -> String>);
+    let columns: Vec<TableColumn<'_>> = vec![
         (
             "Number",
             Box::new(|e: &Element| e.atomic_number().to_string()),
@@ -74,7 +75,7 @@ fn main() {
             "{}",
             columns
                 .iter()
-                .map(|(_, prop)| prop(&element))
+                .map(|(_, prop)| prop(element))
                 .collect::<Vec<_>>()
                 .join("\t")
         );
