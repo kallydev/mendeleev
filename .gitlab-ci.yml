@@ -22,8 +22,8 @@ fmt:
 lint:
   stage: checks
   script:
-    - cargo clippy --quiet --profile test -- -D warnings
-    - cargo clippy --quiet --profile test --features serde -- -D warnings
+    - cargo clippy --quiet --examples --profile test -- -D warnings
+    - cargo clippy --quiet --examples --profile test --features serde -- -D warnings
 
 test:
   stage: checks
