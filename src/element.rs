@@ -8,6 +8,7 @@ pub const N_ELEMENTS: usize = 118;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(feature = "strum", derive(strum_macros::EnumString, strum_macros::EnumIter, strum_macros::VariantArray))]
 /// Each of the known chemical elements
 pub enum Element {
     /// Hydrogen
